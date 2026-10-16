@@ -1,0 +1,11 @@
+# Pedidos têm nome e telefone de clientes reais: não vão para o GitHub.
+# O PHP cria o arquivo sozinho no primeiro pedido.
+dados/pedidos.json
+
+# Material de apoio (guia de estudos e modelos de layout): fica só no computador
+documentacao/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+desktop.ini

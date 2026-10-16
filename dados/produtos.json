@@ -1,0 +1,19 @@
+{
+    "tamanhos": [
+        { "id": "P", "nome": "Pequeno (até 15 fatias)", "preco": 120.00 },
+        { "id": "M", "nome": "Médio (até 25 fatias)", "preco": 180.00 },
+        { "id": "G", "nome": "Grande (até 40 fatias)", "preco": 250.00 }
+    ],
+    "produtos": [
+        { "id": 1, "tema": "Laço Rosa", "descricao": "Bolo rosa com laços de fita e rosinhas de chantilly.", "imagem": "bolo-laco-rosa.jpg" },
+        { "id": 2, "tema": "Borboletas Lilás", "descricao": "Degradê lilás com borboletas e pérolas.", "imagem": "bolo-borboletas-lilas.jpg" },
+        { "id": 3, "tema": "Stitch", "descricao": "Rosa e azul com os personagens Lilo e Stitch.", "imagem": "bolo-stitch.jpg" },
+        { "id": 4, "tema": "Princesa Bela", "descricao": "Amarelo com castelo dourado e rosas vermelhas.", "imagem": "bolo-princesa-bela.jpg" },
+        { "id": 5, "tema": "Moana", "descricao": "Mar, areia, flores tropicais e a turma da Moana.", "imagem": "bolo-moana.jpg" },
+        { "id": 6, "tema": "Monstros S.A.", "descricao": "Azul, rosa e verde com Sulley, Mike e Boo.", "imagem": "bolo-monstros-sa.jpg" },
+        { "id": 7, "tema": "Futebol", "descricao": "Chantilly branco com gramado, chuteira e bola.", "imagem": "bolo-futebol.jpg" },
+        { "id": 8, "tema": "Praia e Surf", "descricao": "Degradê azul com areia, pranchas e estrela-do-mar.", "imagem": "bolo-praia-surf.jpg" },
+        { "id": 9, "tema": "Balões Azuis", "descricao": "Azul clarinho com balões e topo personalizado.", "imagem": "bolo-baloes-azul.jpg" },
+        { "id": 10, "tema": "Retangular com Laços", "descricao": "Bolo retangular branco e rosa com laços de cetim.", "imagem": "bolo-retangular-lacos.jpg" }
+    ]
+}

@@ -1,0 +1,4 @@
+# Bloqueia o acesso direto a esta pasta pelo navegador.
+# Assim ninguém consegue abrir /dados/pedidos.json e ver os dados dos clientes.
+# Só o PHP do próprio site consegue ler e gravar estes arquivos.
+Require all denied
