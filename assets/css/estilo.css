@@ -485,3 +485,6 @@ form .botao { margin-top: 14px; width: 100%; }
 
     .grade-produtos { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* Garante que o atributo hidden esconda o elemento mesmo quando a classe define display */
+[hidden] { display: none !important; }
