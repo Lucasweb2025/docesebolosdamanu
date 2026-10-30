@@ -1,0 +1,12 @@
+{
+    "name": "Doces e Bolos da Manu",
+    "short_name": "Doces da Manu",
+    "description": "Bolos personalizados e doces artesanais. Encomendas para festas e eventos.",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#fde8f0",
+    "theme_color": "#e8364a",
+    "icons": [
+        { "src": "assets/img/logo.jpg", "sizes": "1024x1024", "type": "image/jpeg", "purpose": "any" }
+    ]
+}
