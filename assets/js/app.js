@@ -6,7 +6,7 @@
  */
 
 const NUMERO_WHATSAPP = '5511946339044';   // 55 + DDD + número
-const DIAS_ANTECEDENCIA = 2;               // prazo mínimo para fazer um bolo
+const DIAS_ANTECEDENCIA = 4;               // prazo mínimo para fazer um bolo
 
 // Lista de bolos escolhidos. Cada item: { tema, imagem, tamanho, preco, personalizacao }
 let carrinho = lerCarrinhoSalvo();
@@ -173,7 +173,7 @@ campoTelefone.addEventListener('input', function () {
 
 /* ---------------- Data mínima da festa ---------------- */
 
-// Hoje + 2 dias, no formato "2026-11-01" que o campo de data entende
+// Hoje + 4 dias, no formato "2026-11-01" que o campo de data entende
 function dataMinimaEntrega() {
     const data = new Date();
     data.setDate(data.getDate() + DIAS_ANTECEDENCIA);
@@ -208,7 +208,7 @@ formFinalizar.addEventListener('submit', function (evento) {
     }
     // Comparar textos no formato "2026-11-01" funciona como comparar datas
     if (data === '' || data < dataMinimaEntrega()) {
-        erros.push('Escolha uma data com pelo menos ' + DIAS_ANTECEDENCIA + ' dias de antecedência.');
+        erros.push('Escolha uma data com pelo menos ' + DIAS_ANTECEDENCIA + ' dias de antecedência. É o tempo que a Manu precisa para comprar os ingredientes, preparar e decorar o seu bolo com todo o carinho 💗');
     }
 
     if (erros.length > 0) {

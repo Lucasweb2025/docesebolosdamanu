@@ -79,7 +79,7 @@ $classeAberto = (($_GET['carrinho'] ?? '') === 'aberto') ? 'aberto' : '';
             <label for="data">Data da festa</label>
             <input type="date" id="data" name="data" required min="<?= dataMinimaEntrega() ?>"
                    value="<?= escapar($digitado['data'] ?? '') ?>">
-            <small class="dica">Pedidos com pelo menos <?= DIAS_ANTECEDENCIA ?> dias de antecedência.</small>
+            <small class="dica">Pedidos com pelo menos <?= DIAS_ANTECEDENCIA ?> dias de antecedência: é o tempo que a Manu precisa para comprar os ingredientes, preparar e decorar o seu bolo com todo o carinho 💗</small>
 
             <label for="observacao">Observação (opcional)</label>
             <textarea id="observacao" name="observacao" rows="2" maxlength="300"><?= escapar($digitado['observacao'] ?? '') ?></textarea>

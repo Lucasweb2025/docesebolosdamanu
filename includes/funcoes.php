@@ -17,7 +17,7 @@ const NOME_LOJA        = 'Doces e Bolos da Manu';
 const WHATSAPP_NUMERO  = '5511946339044';   // formato do wa.me: 55 + DDD + número
 const WHATSAPP_EXIBIR  = '(11) 94633-9044';
 const INSTAGRAM_USUARIO = 'docesebolosda.manu';
-const DIAS_ANTECEDENCIA = 2;                // prazo mínimo para fazer um bolo
+const DIAS_ANTECEDENCIA = 4;                // prazo mínimo para fazer um bolo
 
 // Caminhos dos arquivos JSON (o nosso "banco de dados")
 const ARQUIVO_PRODUTOS = __DIR__ . '/../dados/produtos.json';

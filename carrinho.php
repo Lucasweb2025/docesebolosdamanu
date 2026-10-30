@@ -85,7 +85,7 @@ function finalizarPedido()
     }
     // A data vem como "2026-10-30". Comparar textos nesse formato funciona como comparar datas.
     if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $data) || $data < dataMinimaEntrega()) {
-        $erros[] = 'Escolha uma data com pelo menos ' . DIAS_ANTECEDENCIA . ' dias de antecedência.';
+        $erros[] = 'Escolha uma data com pelo menos ' . DIAS_ANTECEDENCIA . ' dias de antecedência. É o tempo que a Manu precisa para comprar os ingredientes, preparar e decorar o seu bolo com todo o carinho 💗';
     }
 
     // Se tem erro, guarda os erros e o que foi digitado na sessão e volta para o carrinho
