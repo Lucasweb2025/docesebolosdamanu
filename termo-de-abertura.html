@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termo de Abertura do Projeto - Doces e Bolos da Manu</title>
+
+    <style>
+        /* Estilo simples, em uma coluna só, bom para ler na tela e para imprimir */
+        body {
+            font-family: Calibri, Arial, sans-serif;
+            line-height: 1.5;
+            color: #222;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 16px 48px;
+        }
+
+        .capa { text-align: center; border-bottom: 3px solid #e8364a; padding-bottom: 16px; margin-bottom: 24px; }
+        .capa h1 { margin: 0 0 4px; color: #c2253a; }
+        .capa p { margin: 2px 0; color: #555; }
+
+        h2 { color: #0000ff; font-size: 1.2rem; border-bottom: 1px solid #999; padding-bottom: 4px; margin-top: 32px; }
+
+        table { border-collapse: collapse; width: 100%; margin: 8px 0; }
+        th, td { border: 1px solid #808080; padding: 6px 10px; text-align: left; }
+        th { background: #bfbfbf; }
+
+        /* Níveis da WBS: cada nível tem uma cor de fundo diferente */
+        .nivel1 td { background: #d9e2f3; font-weight: bold; }
+        .nivel2 td { background: #eef2fa; font-weight: bold; }
+        .nivel3 td:last-child { padding-left: 28px; }
+
+        @media print {
+            body { padding: 0; }
+            h2 { break-after: avoid; }
+            table, li { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="capa">
+    <h1>Termo de Abertura do Projeto</h1>
+    <p><strong>Doces e Bolos da Manu</strong></p>
+    <p>Projeto: Sysblack · Sysblack - Consultoria de TI</p>
+    <p>Prof. Ricardo Black · www.sysblack.com.br · 2026</p>
+</header>
+
+<main>
+
+    <h2>Histórico de alterações do documento</h2>
+    <table>
+        <tr><th>Versão</th><th>Alteração efetuada</th><th>Responsável</th><th>Data</th></tr>
+        <tr><td>1.0</td><td>Versão inicial</td><td>Lucas Santos</td><td>30/10/2026</td></tr>
+    </table>
+
+    <h2>1. Propósito ou justificativa do Projeto</h2>
+    <p>Criar uma presença digital para a confeiteira Manu (Doces e Bolos da Manu), hoje dependente de conversas soltas no WhatsApp e Instagram. O site apresenta o cardápio de bolos personalizados, organiza o pedido (tema, tamanho, data da festa) e envia tudo pronto para o WhatsApp dela, reduzindo erros e idas e vindas na combinação do pedido.</p>
+    <p>Como projeto acadêmico, ele também serve para aplicar HTML, CSS e JavaScript em um caso real e publicar o resultado na internet.</p>
+
+    <h2>2. Objetivos do Projeto</h2>
+    <ul>
+        <li>Publicar um site de página única (Home, Sobre mim, Produtos e Contato) no GitHub Pages. <em>Verificação: o endereço público abre sem erros.</em></li>
+        <li>Exibir o cardápio com 10 temas de bolo, cada um com tamanho e preço. <em>Verificação: os 10 cards aparecem com foto e opções de tamanho.</em></li>
+        <li>Permitir montar um carrinho e enviar o pedido pronto ao WhatsApp da Manu. <em>Verificação: ao finalizar, o WhatsApp abre com nome, data, itens e total corretos.</em></li>
+        <li>Funcionar bem em celular e computador. <em>Verificação: a página se ajusta às duas larguras, com menu próprio no celular.</em></li>
+    </ul>
+
+    <h2>3. Requisitos de alto nível</h2>
+    <ul>
+        <li>Página única com as seções Home, Sobre mim, Produtos e Contato.</li>
+        <li>Cardápio com foto, descrição e escolha de tamanho para cada bolo.</li>
+        <li>Carrinho lateral com adicionar, remover e total.</li>
+        <li>Formulário de pedido com validação de nome, WhatsApp e data (mínimo de 4 dias de antecedência).</li>
+        <li>Envio do pedido formatado para o WhatsApp da Manu.</li>
+        <li>Layout responsivo (celular e computador).</li>
+    </ul>
+
+    <h2>4. Premissas</h2>
+    <ul>
+        <li>A Manu fornece os preços reais, o texto da seção "Sobre mim" e uma foto dela; até lá, valem os dados provisórios.</li>
+        <li>Os pedidos são combinados e confirmados pelo WhatsApp; o site não faz pagamento online.</li>
+        <li>O GitHub Pages permanece disponível e gratuito durante o projeto.</li>
+    </ul>
+
+    <h2>5. Restrições</h2>
+    <ul>
+        <li>O foco do projeto é HTML, CSS e JavaScript; o código deve ser simples, comentado em português e fácil de explicar.</li>
+        <li>A hospedagem é o GitHub Pages, que só serve arquivos estáticos e não executa PHP.</li>
+        <li>Sem banco de dados e sem frameworks; o carrinho fica guardado no navegador.</li>
+        <li>Projeto acadêmico, com prazo definido pelo professor e sem orçamento.</li>
+    </ul>
+
+    <h2>6. Descrição do Projeto em alto nível</h2>
+    <p>O site é uma landing page estática. O HTML traz a estrutura e os cards dos bolos, o CSS cuida do visual e da responsividade, e um JavaScript curto controla o menu, o carrinho (guardado no navegador), a validação do formulário e a montagem da mensagem enviada ao WhatsApp. O código é publicado no GitHub e servido pelo GitHub Pages. Existe também uma versão anterior em PHP, mantida no repositório apenas como referência, que não roda na hospedagem.</p>
+
+    <h2>7. Limites do Projeto</h2>
+    <ul>
+        <li><strong>Dentro do escopo:</strong> site de apresentação e pedido via WhatsApp, publicado no GitHub Pages.</li>
+        <li><strong>Fora do escopo:</strong> pagamento online, login de clientes, painel administrativo, controle de estoque e armazenamento de pedidos em servidor.</li>
+    </ul>
+
+    <h2>8. Riscos de alto nível</h2>
+    <ul>
+        <li>Preços, texto e foto da cliente ainda não entregues, deixando o site com conteúdo provisório.</li>
+        <li>Mudança de orientação do professor sobre o foco ou as tecnologias (já aconteceu uma vez: o foco passou a ser HTML e CSS).</li>
+        <li>Carrinho guardado só no navegador: se o cliente limpar os dados do navegador, perde os itens escolhidos.</li>
+        <li>Falha ou instabilidade do GitHub Pages ou do WhatsApp, que impediria a publicação ou o envio do pedido.</li>
+    </ul>
+
+    <h2>9. Estrutura Analítica do Projeto (WBS)</h2>
+    <table>
+        <tr><th style="width: 90px;">Código</th><th>Entrega / atividade</th></tr>
+        <tr class="nivel1"><td>1</td><td>Site Doces e Bolos da Manu</td></tr>
+
+        <tr class="nivel2"><td>1.1</td><td>Gerenciamento do projeto</td></tr>
+        <tr class="nivel3"><td>1.1.1</td><td>Termo de Abertura do Projeto</td></tr>
+        <tr class="nivel3"><td>1.1.2</td><td>Estrutura Analítica (WBS) e cronograma</td></tr>
+        <tr class="nivel3"><td>1.1.3</td><td>Entrega e validação com o professor</td></tr>
+
+        <tr class="nivel2"><td>1.2</td><td>Levantamento e conteúdo</td></tr>
+        <tr class="nivel3"><td>1.2.1</td><td>Reunir logo e fotos dos bolos</td></tr>
+        <tr class="nivel3"><td>1.2.2</td><td>Definir cardápio, tamanhos e preços</td></tr>
+        <tr class="nivel3"><td>1.2.3</td><td>Escrever os textos (Sobre mim e Contato)</td></tr>
+
+        <tr class="nivel2"><td>1.3</td><td>Design e layout</td></tr>
+        <tr class="nivel3"><td>1.3.1</td><td>Identidade visual (cores, fontes e logo)</td></tr>
+        <tr class="nivel3"><td>1.3.2</td><td>Layout responsivo para celular e computador</td></tr>
+
+        <tr class="nivel2"><td>1.4</td><td>Desenvolvimento do site</td></tr>
+        <tr class="nivel3"><td>1.4.1</td><td>HTML: estrutura, seções e cards dos bolos</td></tr>
+        <tr class="nivel3"><td>1.4.2</td><td>CSS: visual e responsividade</td></tr>
+        <tr class="nivel3"><td>1.4.3</td><td>JavaScript: menu, carrinho, validação e envio ao WhatsApp</td></tr>
+
+        <tr class="nivel2"><td>1.5</td><td>Testes</td></tr>
+        <tr class="nivel3"><td>1.5.1</td><td>Testes no computador</td></tr>
+        <tr class="nivel3"><td>1.5.2</td><td>Testes no celular</td></tr>
+        <tr class="nivel3"><td>1.5.3</td><td>Teste do pedido chegando ao WhatsApp</td></tr>
+
+        <tr class="nivel2"><td>1.6</td><td>Publicação</td></tr>
+        <tr class="nivel3"><td>1.6.1</td><td>Repositório no GitHub</td></tr>
+        <tr class="nivel3"><td>1.6.2</td><td>Publicação no GitHub Pages</td></tr>
+
+        <tr class="nivel2"><td>1.7</td><td>Documentação</td></tr>
+        <tr class="nivel3"><td>1.7.1</td><td>README do projeto</td></tr>
+        <tr class="nivel3"><td>1.7.2</td><td>Comentários explicativos no código</td></tr>
+    </table>
+
+    <h2>10. Resumo do cronograma de marcos</h2>
+    <ul>
+        <li><strong>Reunião de kickoff do Projeto:</strong> 16/10/2026</li>
+        <li><strong>Encerramento da fase de planejamento do Projeto:</strong> a definir</li>
+        <li><strong>Encerramento do Projeto:</strong> a definir (data de entrega combinada com o professor)</li>
+    </ul>
+
+    <h2>11. Resumo do orçamento</h2>
+    <p>Está previsto um orçamento de R$ 0,00 (zero reais) para o Projeto. Projeto acadêmico sem custos: hospedagem gratuita no GitHub Pages, ferramentas gratuitas e sem pagamento de mão de obra.</p>
+
+    <h2>12. Lista das partes interessadas</h2>
+    <ul>
+        <li>Lucas Santos: gerente e desenvolvedor do projeto.</li>
+        <li>Manu (Doces e Bolos da Manu): cliente e dona do negócio.</li>
+        <li>Prof. Ricardo Black: orientador e avaliador do projeto.</li>
+        <li>Clientes da Manu: usuários finais do site.</li>
+    </ul>
+
+    <h2>13. Requisitos para aprovação do Projeto</h2>
+    <ul>
+        <li>O site está publicado e acessível pelo endereço do GitHub Pages.</li>
+        <li>Todos os requisitos de alto nível funcionam, incluindo o envio do pedido ao WhatsApp.</li>
+        <li>O código está claro e comentado, e o aluno consegue explicá-lo.</li>
+        <li>O professor valida e encerra o projeto.</li>
+    </ul>
+
+    <h2>14. Gerente do Projeto</h2>
+    <ul>
+        <li><strong>Nome:</strong> Lucas Santos</li>
+        <li><strong>Responsabilidade:</strong> planejar, desenvolver, testar e publicar o site e entregar a documentação.</li>
+        <li><strong>Nível de autoridade designado:</strong> decide sobre o código e o layout dentro do escopo; mudanças de escopo passam pelo professor.</li>
+    </ul>
+
+    <h2>15. Patrocinador</h2>
+    <ul>
+        <li><strong>Nome:</strong> Manu (Doces e Bolos da Manu)</li>
+        <li><strong>Autoridade:</strong> aprova o conteúdo do site (preços, textos e fotos) e o resultado final como cliente.</li>
+    </ul>
+
+    <h2>16. Responsável pela autorização do Projeto</h2>
+    <p><strong>Prof. Ricardo Black</strong></p>
+
+</main>
+
+</body>
+</html>

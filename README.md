@@ -7,9 +7,16 @@ Site (landing page) de uma confeitaria real, feito como **trabalho da faculdade*
 | **Cliente** | Doces e Bolos da Manu: bolos personalizados e doces artesanais (Jardim Comercial, São Paulo/SP) |
 | **Instagram** | [@docesebolosda.manu](https://www.instagram.com/docesebolosda.manu/) |
 | **WhatsApp** | (11) 94633-9044 |
-| **Tecnologias** | HTML, CSS, JavaScript e **PHP** (o foco do trabalho) |
-| **Banco de dados** | Nenhum: os dados ficam em arquivos **JSON** |
+| **Site no ar** | https://lucasweb2025.github.io/docesebolosdamanu/ |
+| **Tecnologias** | **HTML, CSS e JavaScript** (o foco do trabalho) e **PHP** (versão complementar) |
+| **Banco de dados** | Nenhum: o carrinho fica no navegador (`localStorage`) e, na versão PHP, os dados ficam em arquivos **JSON** |
 | **Funciona em** | Computador, tablet e celular (Android e iPhone) |
+
+> **O projeto tem duas versões.**
+> - **Versão estática** (`index.html` + `assets/js/app.js`): é a que está publicada no GitHub Pages, que não executa PHP. Está explicada na [seção 15](#15-versão-estática-github-pages-html-css-e-javascript).
+> - **Versão PHP** (`index.php` + `carrinho.php` + `includes/`): roda no computador com o servidor do PHP. As seções 2 a 14 deste arquivo explicam essa versão.
+>
+> As duas usam o mesmo `assets/css/estilo.css` e as mesmas fotos.
 
 ---
 
@@ -28,6 +35,7 @@ Site (landing page) de uma confeitaria real, feito como **trabalho da faculdade*
 12. [Como alterar produtos, preços e textos](#12-como-alterar-produtos-preços-e-textos)
 13. [Como testar](#13-como-testar)
 14. [Perguntas que o professor pode fazer](#14-perguntas-que-o-professor-pode-fazer)
+15. [Versão estática (GitHub Pages): HTML, CSS e JavaScript](#15-versão-estática-github-pages-html-css-e-javascript)
 
 ---
 
@@ -427,6 +435,96 @@ Só a parte visual: abrir e fechar o menu e o carrinho e formatar o telefone. To
 
 **Como o site funciona no celular?**
 Com `meta viewport`, CSS mobile-first, `@media` para telas maiores, Flexbox e Grid, imagens com `max-width: 100%` e fonte de 16px nos campos.
+
+---
+
+## 15. Versão estática (GitHub Pages): HTML, CSS e JavaScript
+
+O GitHub Pages só entrega arquivos prontos e **não executa PHP**. Por isso existe esta versão, em que o navegador faz tudo sozinho. Ela é a que está no ar: https://lucasweb2025.github.io/docesebolosdamanu/
+
+### Arquivos desta versão
+
+| Arquivo | Para que serve |
+|---|---|
+| `index.html` | A página inteira: cabeçalho, as 4 seções, os 10 cards de bolo, o carrinho lateral e o rodapé |
+| `assets/css/estilo.css` | O visual e o layout responsivo (o mesmo da versão PHP) |
+| `assets/js/app.js` | Menu, carrinho, validação e envio do pedido ao WhatsApp |
+| `manifest.webmanifest` | Nome e ícone (a logo) quando o site é adicionado à tela inicial do celular |
+| `termo-de-abertura.html` | Termo de Abertura do Projeto da disciplina |
+
+### Como o `app.js` funciona
+
+O arquivo é dividido em blocos com comentários, na ordem em que acontecem:
+
+| Bloco | O que faz |
+|---|---|
+| Menu do celular | O botão ☰ liga e desliga a classe `aberto` do menu (`classList.toggle`) |
+| Abrir e fechar o carrinho | Funções `abrirCarrinho()` e `fecharCarrinho()`; clicar fora também fecha |
+| Guardar e ler o carrinho | `localStorage` guarda a lista como texto (`JSON.stringify`) e lê de volta (`JSON.parse`) |
+| Adicionar um bolo | Ao enviar o formulário do card, lê o tamanho escolhido e coloca o bolo na lista `carrinho` |
+| Desenhar o carrinho | `mostrarCarrinho()` apaga a lista e desenha de novo, item por item, com o total |
+| Máscara do telefone | `11946339044` vira `(11) 94633-9044` enquanto digita |
+| Data mínima | `dataMinimaEntrega()` calcula hoje + 4 dias e bloqueia datas antes disso no campo de data |
+| Finalizar | Valida nome, telefone e data; se estiver tudo certo, monta a mensagem e abre o WhatsApp |
+
+### Como rodar no computador
+- **Mais simples:** dar dois cliques no `index.html`.
+- **Com servidor** (igual ao site publicado): na pasta do projeto, rodar `php -S localhost:8000` e abrir `http://localhost:8000/index.html`.
+
+### Como publicar (GitHub Pages)
+1. Enviar o projeto para o GitHub (`git push`).
+2. No repositório: **Settings → Pages**.
+3. Em *Source*, escolher a branch `main` e a pasta `/ (root)`, e salvar.
+4. Esperar 1 a 3 minutos. O endereço aparece na mesma tela.
+
+### Como alterar
+
+| Quero mudar... | Onde |
+|---|---|
+| Preços e tamanhos | `index.html`: cada card tem um `<select>` com as opções P, M e G (`data-preco`). Usar buscar e substituir (`Ctrl+H`) para trocar nos 10 cards de uma vez |
+| Prazo mínimo (dias) | `DIAS_ANTECEDENCIA` no começo do `assets/js/app.js` e o aviso embaixo do campo de data no `index.html` |
+| Número do WhatsApp | `NUMERO_WHATSAPP` no `app.js` e os links `wa.me` no `index.html` |
+| Texto do "Sobre mim" | `index.html`, seção `id="sobre"` |
+| Adicionar um bolo | Copiar um `<article class="card">` no `index.html`, trocar `data-tema`, `data-imagem`, o título e a descrição, e colocar a foto em `assets/img/bolos/` |
+| Cores | Variáveis no começo de `assets/css/estilo.css` |
+
+### Como testar
+
+| Teste | Resultado esperado |
+|---|---|
+| Adicionar um bolo | O carrinho abre com o item, o preço e o contador do topo aumenta |
+| Fechar e abrir a página | O carrinho continua com os itens (`localStorage`) |
+| Remover um item | O item some e o total diminui |
+| Finalizar com campos vazios | Aparecem as mensagens de erro |
+| Escolher data antes de 4 dias | Erro com a explicação do prazo; o calendário já bloqueia essas datas |
+| Finalizar certo | Abre o WhatsApp da Manu com a mensagem do pedido pronta |
+| Abrir no celular | Sem rolagem para os lados e menu ☰ funcionando |
+
+### Perguntas que o professor pode fazer (versão estática)
+
+**Por que existe uma versão sem PHP?**
+A hospedagem gratuita do GitHub Pages só serve arquivos estáticos. Sem servidor PHP, a lógica do carrinho passou para o JavaScript, que roda no navegador.
+
+**Onde ficam os dados do carrinho?**
+No `localStorage` do navegador: um espaço de armazenamento do próprio aparelho, que continua depois de fechar a página. Cada pessoa vê só o seu carrinho.
+
+**Qual a diferença entre `localStorage` e a sessão do PHP?**
+A sessão do PHP fica no servidor e é ligada ao visitante por um cookie. O `localStorage` fica no navegador, e o servidor nem fica sabendo.
+
+**Se a validação é no JavaScript, alguém consegue burlar?**
+Sim. Quem abre o navegador consegue alterar o JavaScript. Aqui isso não é um problema: o pedido só vira uma mensagem de WhatsApp que a Manu lê e confirma. Quando o pedido é salvo num servidor (versão PHP), a validação precisa ser refeita lá.
+
+**Por que o `textContent` e não o `innerHTML` para mostrar o nome do bolo e o texto digitado?**
+O `textContent` mostra tudo como texto puro. Com o `innerHTML`, se alguém digitar `<script>`, o navegador poderia executá-lo (XSS).
+
+**O que o `preventDefault()` faz?**
+Impede o formulário de recarregar a página ao ser enviado, para o JavaScript tratar o envio.
+
+**Como o pedido chega à Manu sem servidor?**
+O JavaScript monta o texto do pedido e abre `https://wa.me/55…?text=…` com a mensagem já escrita (`encodeURIComponent` troca espaços e acentos por códigos válidos em endereço).
+
+**O site é um PWA?**
+Não completo. Tem `manifest.webmanifest` e ícone, então dá para adicionar à tela inicial com a logo, mas não funciona offline (não há *service worker*).
 
 ---
 
